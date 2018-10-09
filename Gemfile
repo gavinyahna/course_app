@@ -60,7 +60,7 @@ end
 
 group :production do 
 	gem 'pg', '0.20.0'
-	gem 'activerecord-postgresql-adapter'
+	gem "activerecord-postgresql-adapter"
 end
 
 group :test do
