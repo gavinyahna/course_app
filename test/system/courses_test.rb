@@ -15,13 +15,16 @@ class CoursesTest < ApplicationSystemTestCase
     click_on "New Course"
 
     fill_in "Code", with: @course.code
+    fill_in "Comment", with: @course.comment
+    fill_in "Continuity", with: @course.continuity_id
     fill_in "Credits", with: @course.credits
     fill_in "Description", with: @course.description
     fill_in "Independent Study", with: @course.independent_study
     fill_in "Name", with: @course.name
-    fill_in "Subject", with: @course.subject_id
+    fill_in "Requirements", with: @course.requirements
+    fill_in "Subjects", with: @course.subjects
     fill_in "Term", with: @course.term
-    fill_in "Type", with: @course.type
+    fill_in "Uniq", with: @course.uniq_id
     click_on "Create Course"
 
     assert_text "Course was successfully created"
@@ -33,13 +36,16 @@ class CoursesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Code", with: @course.code
+    fill_in "Comment", with: @course.comment
+    fill_in "Continuity", with: @course.continuity_id
     fill_in "Credits", with: @course.credits
     fill_in "Description", with: @course.description
     fill_in "Independent Study", with: @course.independent_study
     fill_in "Name", with: @course.name
-    fill_in "Subject", with: @course.subject_id
+    fill_in "Requirements", with: @course.requirements
+    fill_in "Subjects", with: @course.subjects
     fill_in "Term", with: @course.term
-    fill_in "Type", with: @course.type
+    fill_in "Uniq", with: @course.uniq_id
     click_on "Update Course"
 
     assert_text "Course was successfully updated"

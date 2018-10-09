@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @course.name %>
+  <strong>Uniq:</strong>
+  <%= @course.uniq_id %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @course.type %>
+  <strong>Comment:</strong>
+  <%= @course.comment %>
 </p>
 
 <p>
@@ -21,8 +21,13 @@
 </p>
 
 <p>
-  <strong>Subject:</strong>
-  <%= @course.subject_id %>
+  <strong>Continuity:</strong>
+  <%= @course.continuity_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
 </p>
 
 <p>
@@ -38,6 +43,16 @@
 <p>
   <strong>Independent study:</strong>
   <%= @course.independent_study %>
+</p>
+
+<p>
+  <strong>Requirements:</strong>
+  <%= @course.requirements %>
+</p>
+
+<p>
+  <strong>Subjects:</strong>
+  <%= @course.subjects %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

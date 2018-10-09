@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+jsons = [["db/university_jsons/instructor.json", "instructor"], ["db/university_jsons/course.json", "course"], ["db/university_jsons/subject.json", "subject"]]
+
+jsons.each do |json|
+    type = json[1]
+    dataSet = JSON.parse(File.read(json[0]))
+    dataSet.each {|data| data['uniq_id'] = data.delete('id')}
+    if type == 'course'
+        Course.import dataSet, validate:false
+    elsif type == 'instructor'
+        Instructor.import dataSet, validate:false
+    elsif type == 'subject'
+        Subject.import dataSet, validate:false
+    end
+end
+    

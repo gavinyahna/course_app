@@ -17,7 +17,7 @@ class InstructorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create instructor" do
     assert_difference('Instructor.count') do
-      post instructors_url, params: { instructor: { email: @instructor.email, first: @instructor.first, last: @instructor.last, middle: @instructor.middle, type: @instructor.type } }
+      post instructors_url, params: { instructor: { comment: @instructor.comment, email: @instructor.email, first: @instructor.first, last: @instructor.last, middle: @instructor.middle, uniq_id: @instructor.uniq_id } }
     end
 
     assert_redirected_to instructor_url(Instructor.last)
@@ -34,7 +34,7 @@ class InstructorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update instructor" do
-    patch instructor_url(@instructor), params: { instructor: { email: @instructor.email, first: @instructor.first, last: @instructor.last, middle: @instructor.middle, type: @instructor.type } }
+    patch instructor_url(@instructor), params: { instructor: { comment: @instructor.comment, email: @instructor.email, first: @instructor.first, last: @instructor.last, middle: @instructor.middle, uniq_id: @instructor.uniq_id } }
     assert_redirected_to instructor_url(@instructor)
   end
 

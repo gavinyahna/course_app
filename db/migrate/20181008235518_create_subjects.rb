@@ -1,11 +1,12 @@
 class CreateSubjects < ActiveRecord::Migration[5.2]
   def change
     create_table :subjects do |t|
-      t.string :type
+      t.integer :uniq_id
+      t.string :comment
       t.string :term
       t.string :name
       t.string :abbreviation
-      t.integer :segment_id
+      t.string :segments
 
       t.timestamps
     end

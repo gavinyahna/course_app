@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @subject.type %>
+  <strong>Uniq:</strong>
+  <%= @subject.uniq_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @subject.comment %>
 </p>
 
 <p>
@@ -21,8 +26,8 @@
 </p>
 
 <p>
-  <strong>Segment:</strong>
-  <%= @subject.segment_id %>
+  <strong>Segments:</strong>
+  <%= @subject.segments %>
 </p>
 
 <%= link_to 'Edit', edit_subject_path(@subject) %> |

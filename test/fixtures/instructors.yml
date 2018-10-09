@@ -1,14 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
+  uniq_id: 1
+  comment: MyString
   email: MyString
   first: MyString
   middle: MyString
   last: MyString
 
 two:
-  type: 
+  uniq_id: 1
+  comment: MyString
   email: MyString
   first: MyString
   middle: MyString

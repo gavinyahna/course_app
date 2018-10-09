@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CourseApp</title>
+    <title>Course Listings</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="application.css">
   </head>
 
   <body>
+    <h2>
+      Course Catelog
+    </h2>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="courses#index">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="instructors#index">Instructors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="subjects#index">Subjects</a>
+      </li>
     <%= yield %>
   </body>
 </html>
+

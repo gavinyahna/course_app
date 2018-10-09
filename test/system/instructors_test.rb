@@ -14,11 +14,12 @@ class InstructorsTest < ApplicationSystemTestCase
     visit instructors_url
     click_on "New Instructor"
 
+    fill_in "Comment", with: @instructor.comment
     fill_in "Email", with: @instructor.email
     fill_in "First", with: @instructor.first
     fill_in "Last", with: @instructor.last
     fill_in "Middle", with: @instructor.middle
-    fill_in "Type", with: @instructor.type
+    fill_in "Uniq", with: @instructor.uniq_id
     click_on "Create Instructor"
 
     assert_text "Instructor was successfully created"
@@ -29,11 +30,12 @@ class InstructorsTest < ApplicationSystemTestCase
     visit instructors_url
     click_on "Edit", match: :first
 
+    fill_in "Comment", with: @instructor.comment
     fill_in "Email", with: @instructor.email
     fill_in "First", with: @instructor.first
     fill_in "Last", with: @instructor.last
     fill_in "Middle", with: @instructor.middle
-    fill_in "Type", with: @instructor.type
+    fill_in "Uniq", with: @instructor.uniq_id
     click_on "Update Instructor"
 
     assert_text "Instructor was successfully updated"
