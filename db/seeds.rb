@@ -1,3 +1,6 @@
+require active_record
+require activerecord-import
+
 jsons = [["db/university_jsons/instructor.json", "instructor"], ["db/university_jsons/course.json", "course"], ["db/university_jsons/subject.json", "subject"]]
 
 jsons.each do |json|
