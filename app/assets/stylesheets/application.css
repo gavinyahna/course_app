@@ -1,1 +1,6 @@
 @import "bootstrap";
+
+.navbar-custom {
+    background-color: #145acc;
+    color: #ffffff;
+}
