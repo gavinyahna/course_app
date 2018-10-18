@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_235541) do
+ActiveRecord::Schema.define(version: 2018_10_18_004859) do
 
   create_table "courses", force: :cascade do |t|
     t.integer "uniq_id"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 2018_10_08_235541) do
     t.boolean "independent_study"
     t.string "requirements"
     t.string "subjects"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +55,15 @@ ActiveRecord::Schema.define(version: 2018_10_08_235541) do
     t.string "segments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

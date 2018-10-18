@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :enrollments
+  get 'users/new'
+  resources :users
   resources :instructors
   resources :subjects
   resources :courses

@@ -23,6 +23,7 @@ gem 'bootstrap'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bcrypt', '3.1.12'
 
 
 # Use Redis adapter to run Action Cable in production
