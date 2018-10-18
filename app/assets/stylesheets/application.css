@@ -4,3 +4,37 @@
     background-color: #145acc;
     color: #ffffff;
 }
+
+.title {
+    margin: 0 auto;
+    border-radius: 20px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #145acc;
+    padding: 20px;
+}
+
+.outer_div {
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 30px;
+    background-color: #bfbfbf;
+    height: 100%;
+    width: 30%;
+}
+
+.inner_div {
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.form_input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+/* forms */
