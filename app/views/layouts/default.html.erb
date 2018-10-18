@@ -1,3 +1,6 @@
+<% if logged_in? %>
 <h5>Click on one of the tabs above to see some data.</h5>
+<% else %>
 <%= link_to "Sign Up", '/signup', class: "btn btn-lg btn-primary" %>
 <%= link_to "Log In", '/login', class: "btn btn-lg btn-primary" %>
+<% end %>

@@ -71,4 +71,9 @@ class CoursesController < ApplicationController
     def course_params
       params.require(:course).permit(:uniq_id, :comment, :term, :code, :continuity_id, :name, :description, :credits, :independent_study, :requirements, :subjects)
     end
+
+    def search
+      render 'search'
+    end
+
 end

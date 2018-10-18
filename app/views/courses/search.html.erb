@@ -1,0 +1,17 @@
+<div class="outer_div">
+    <% provide(:title, "Search") %>
+    <h1 class="title">Search Courses</h1>
+
+    <div class="inner_div">
+        <%= form_for(:session, url: search_path) do |f| %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form_input' %>
+
+        <%= f.label :subject %>
+        <%= f.text_field :subject, class: 'form_input' %>
+
+        <%= f.submit "Search", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
