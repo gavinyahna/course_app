@@ -67,6 +67,15 @@ class CoursesController < ApplicationController
     @courses = Course.search(name, subject)
   end
 
+  def create_enrollment()
+    course_id = params[:course_id]
+    user_id = params[:user_id]
+    @enrollment = Enrollment.new
+    @enrollment.course_id = course_id
+    @enrollment.user_id = user_id
+    puts @enrollment.to_s
+    @enrollment.save
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

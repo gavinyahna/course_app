@@ -19,7 +19,9 @@
         Course Catelog
       </h2>
     </a>
-    <%= link_to "Log Out", logout_path, method: :delete , class: "main_title"%>
+    <%if logged_in?%>
+      <%= link_to "Log Out", logout_path, method: :delete , class: "main_title"%>
+    <% end %>
     </nav>
     <ul class="nav nav-tabs">
       <li class="nav-item">
@@ -35,6 +37,13 @@
         <a class="nav-link" href="/search"><h4>Search</h4></a>
       </li>
     </ul>
+
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-info") %>
+      <% end %>
+      <% flash.clear %>
+    </div>
     <%= yield %>
   </body>
 </html>
