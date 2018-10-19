@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title"><%= current_user.name %>'s Enrollments </h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Course</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrollments = Enrollment.all %>
+    <% @enrollments.each do |enrollment| %>
+        <%if enrollment.user_id == current_user.id %>
+        <tr>
+            <td><%= enrollment.user_id %></td>
+            <td><%= enrollment.course_id %></td>
+            <td><%= link_to 'Show', enrollment, class: "btn btn-primary"%></td>
+            <td><%= link_to 'Edit', edit_enrollment_path(enrollment), class: "btn btn-primary"%></td>
+            <td><%= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%></td>
+        </tr>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enrollment', new_enrollment_path %>
