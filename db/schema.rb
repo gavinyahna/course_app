@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_10_18_004859) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "courses", force: :cascade do |t|
     t.integer "uniq_id"
     t.string "comment"

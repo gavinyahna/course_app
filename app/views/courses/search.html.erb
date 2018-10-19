@@ -3,15 +3,21 @@
     <h1 class="title">Search Courses</h1>
 
     <div class="inner_div">
-        <%= form_for(:session, url: search_path) do |f| %>
+        <%= form_tag(search_path, method: :get) do %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form_input' %>
-
-        <%= f.label :subject %>
-        <%= f.text_field :subject, class: 'form_input' %>
-
-        <%= f.submit "Search", class: "btn btn-primary" %>
+        name
+        <%= text_field_tag :name, params[:name] %>
+        <br>
+        subject
+        <%= select_tag :subject, options_from_collection_for_select(Subject.all, :id, :name, params[:course]), include_blank: true %>
+        <br>
+        <%= submit_tag ("Search"), class: "btn btn-primary" %>
         <% end %>
     </div>
+
+    <% @courses.each do |course| %>
+        <ul>
+            <li><%= course.name %></li><br>
+        </ul>
+    <% end %>
 </div>

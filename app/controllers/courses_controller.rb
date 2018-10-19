@@ -61,6 +61,13 @@ class CoursesController < ApplicationController
     end
   end
 
+  def search
+    name = params[:name]
+    subject = params[:subject]
+    @courses = Course.search(name, subject)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
@@ -70,10 +77,6 @@ class CoursesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:uniq_id, :comment, :term, :code, :continuity_id, :name, :description, :credits, :independent_study, :requirements, :subjects)
-    end
-
-    def search
-      render 'search'
     end
 
 end
