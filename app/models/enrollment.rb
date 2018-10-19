@@ -1,4 +1,4 @@
 class Enrollment < ApplicationRecord
-    has_many :users
-    has_many :courses
+    belongs_to :users
+    belongs_to :courses
 end
