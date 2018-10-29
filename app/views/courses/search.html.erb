@@ -15,12 +15,7 @@
     </div>
 
     <div id="course_table" class="result">
-        <% @courses.each do |course| %>
-            <div class="flex_between">
-                <%= course.name %>
-                <%= link_to 'Enroll', search_path(:course_id => course.id, :user_id => current_user.id),method: :post, class: "btn btn-primary"%>
-            </div>
-        <% end %>
+        <%= render 'results'%>
     </div>
 
 </div>
