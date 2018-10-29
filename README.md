@@ -1,7 +1,7 @@
 Gavin Yahna
 Capstone Software Engineering
 
-My home page will display the enrollements for the user that is logged into the applicaiton, if no user is logged in it will show a log in and sign up button. Once the user is logged in they are able to search for courses by clicking on the search tab. The search filters allow the user to search course by name or subject. The results are shown below and have an enroll button next to them. Once the user has been enrolled in courses they are able to look at their enrolled courses on the home page. One short cut to the home page is clicking on the Course Catelog menu on the top nav bar as it links back to the home page.
+The search functionality only works if a user is logged in, as users should can't enroll without first having an account. I removed the search button made searching work with out refreshing the page by using js and ajax. In order to trigger the ajax you have to either select a subject or press enter after entering text in the name field.
 
 Heroku: https://rails-app2.herokuapp.com/
 Github: https://github.com/gavinyahna/course_app

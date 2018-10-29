@@ -18,7 +18,7 @@
         Course Catelog
       </h2>
     </a>
-    <%if logged_in?%>
+    <%if logged_in? %>
       <%= link_to "Log Out", logout_path, method: :delete , class: "main_title"%>
     <% end %>
     </nav>
@@ -32,9 +32,11 @@
       <li class="nav-item">
         <a class="nav-link" href="subjects#index"><h4>Subjects</h4></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/search"><h4>Search</h4></a>
-      </li>
+      <% if logged_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/search"><h4>Search</h4></a>
+        </li>
+      <% end %>
     </ul>
 
     <div class="container">
