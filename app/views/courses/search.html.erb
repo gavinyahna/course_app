@@ -3,26 +3,24 @@
     <h1 class="title">Search Courses</h1>
 
     <div class="inner_div">
-        <%= form_tag(search_path, method: :get) do %>
-
-        name
-        <%= text_field_tag :name, params[:name], class: "form_input" %>
-        <br>
-        subject
-        <%= select_tag :subject, options_from_collection_for_select(Subject.all, :id, :name, params[:course]), include_blank: true, class: "form_input" %>
-        <br>
-        <%= submit_tag ("Search"), class: "btn btn-primary" %>
+        <%= form_tag search_path, method: :get, remote: true, id: :course_search do %>
+            <h4>Name</h4>
+            <%= text_field_tag :name, params[:name], class: "form_input" %>
+            <br>
+            <h4>Subject</h4>
+            <%= select_tag :subject, options_from_collection_for_select(Subject.all, :id, :name, params[:course]),
+                data: { remote: true, url: search_path, method: 'get' }, include_blank: true, class: "form_input" %>
+            <br>
         <% end %>
     </div>
 
-    <div class="result">
+    <div id="course_table" class="result">
         <% @courses.each do |course| %>
-            <ul>
-                <li>
-                    <%= course.name %>
-                    <%= link_to 'Enroll', search_path(:course_id => course.id, :user_id => current_user.id),method: :post, class: "btn btn-primary"%>
-                </li>
-            </ul>
+            <div class="flex_between">
+                <%= course.name %>
+                <%= link_to 'Enroll', search_path(:course_id => course.id, :user_id => current_user.id),method: :post, class: "btn btn-primary"%>
+            </div>
         <% end %>
     </div>
+
 </div>

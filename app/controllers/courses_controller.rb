@@ -64,7 +64,11 @@ class CoursesController < ApplicationController
   def search
     name = params[:name]
     subject = params[:subject]
-    @courses = Course.search(name, subject)
+    @courses = Course.search(name, subject).sort_by{ |course| course.name }
+    respond_to do |format|
+      format.js
+      format.html 
+    end
   end
 
   def create_enrollment()
